@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Pet {
 
     private String name;
@@ -43,5 +45,8 @@ public class Pet {
 
     public void setOwner(Person owner) {
         this.owner = owner;
+    }
+
+    public void addAll(ArrayList<Pet> pets) {
     }
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Person {
 
@@ -136,9 +137,26 @@ public class Person {
 
     public void addChild() {}
 
-    public void addPet() {}
+    public void addPet(Person person, Pet pet) {
+        ArrayList<Pet> pets = new ArrayList<>();
+        if(person.getPets() != null) {
+            pets.addAll(person.getPets());
+            }
+        pets.add(pet);
+        person.setPets(pets);
+        }
 
-    public void addSibling() {}
+    public void addSibling(Person person, Person sibling) {
+        ArrayList<Person> family= new ArrayList<>();
+        if(person.getSiblings() != null) {
+            for (Person people : person.getSiblings()) {
+                family.add(people);
+            }
+        }
+        family.add(sibling);
+        person.setSiblings(family);
+
+    }
 
     public void getGrandchildren() {}
 }
