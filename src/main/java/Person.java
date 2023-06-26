@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Person {
 
+    //instance variables
     private String name;
     private String middleName;
     private String lastname;
@@ -13,7 +14,7 @@ public class Person {
     ArrayList <Person> children;
     ArrayList<Pet> pets;
 
-
+    //constructors
     public Person(String name, String lastname, char sex, int age) {
         this.name = name;
         this.lastname = lastname;
@@ -29,6 +30,7 @@ public class Person {
         this.age = age;
     }
 
+    //getters & setters
     public String getName() {
         return name;
     }
@@ -118,8 +120,17 @@ public class Person {
 
     }
 
-    public void addChildToChildren(Person child, Person parent) {
-        children.add(child);
+
+    public void addChildToChildren(Person parent, Person child) {
+        //here I create a new list
+        ArrayList<Person> kids = new ArrayList<>();
+        if(parent.getChildren() != null) {
+            for (Person person : parent.getChildren()) {
+                kids.add(person);
+            }
+        }
+        kids.add(child);
+        parent.setChildren(kids);
 
     }
 
